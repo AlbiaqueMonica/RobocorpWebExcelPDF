@@ -48,7 +48,11 @@ Exports the table as PDF
  Open PDF file
      Open File  ${OUTPUT_DIR}${/}sales_results.pdf
      Set Wait Time    0.3
-     Close Pdf    sales_results.pdf 
+     #Close Pdf    sales_results.pdf 
+
+Log out and close
+    Click Button    logout
+    Close Browser
 
 *** Tasks ***
 Open Browser and Log in
@@ -60,3 +64,4 @@ Open Browser and Log in
     Collect the results
     Exports the table as PDF
     Open PDF file
+    [teardown]    Log out and close
