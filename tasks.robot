@@ -5,13 +5,13 @@ Library    RPA.HTTP
 Library    RPA.Excel.Files
 Library    RPA.PDF
 Library    RPA.Desktop
-Library    RPA.Windows
+   
 
 *** Keywords ***
 Open Intranet Robocorp
     Open Available Browser    https://robotsparebinindustries.com/#/
 
-Log in
+Log-in
     Input Text    username    maria
     Input Password    password    thoushallnotpass
     Submit Form
@@ -47,7 +47,6 @@ Exports the table as PDF
 
  Open PDF file
      Open File  ${OUTPUT_DIR}${/}sales_results.pdf
-     Set Wait Time    0.3
      #Close Pdf    sales_results.pdf 
 
 Log out and close
@@ -57,7 +56,7 @@ Log out and close
 *** Tasks ***
 Open Browser and Log in
     Open Intranet Robocorp
-    Log in
+    Log-in    
     Download excel file
     #Fill and Submit form for one person
     Fill form using data from excel file
